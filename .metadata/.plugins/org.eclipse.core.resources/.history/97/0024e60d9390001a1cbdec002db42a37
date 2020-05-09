@@ -1,9 +1,0 @@
-package com.cg.tms.dao;
-
-import org.springframework.data.jpa.repository.JpaRepository;
-
-import com.cg.tms.entity.TestEntity;
-
-public interface TestsRepository extends JpaRepository<TestEntity,Long> {
-
-}
