@@ -1,0 +1,31 @@
+package com.cg.dcms.entity;
+
+//import java.util.List;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+//import com.cg.apms.model.TestDataModel;
+
+@Entity
+@Table(name="dc_table")
+public class DiagnosticCenterEntity {
+
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+    private Long centerId;
+	
+	@Column(name="c_Name",nullable=false)
+	private String centerName;
+	
+	@Column(name="c_Name")
+	private String address;
+	
+    @Column(name="c_info")
+	private String contactInfo;
+	
+	
+}

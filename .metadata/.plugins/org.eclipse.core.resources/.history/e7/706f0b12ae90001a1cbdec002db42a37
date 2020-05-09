@@ -1,0 +1,5 @@
+package com.cg.apms.service;
+
+public interface DiagnosticCenterProxyService {
+
+}

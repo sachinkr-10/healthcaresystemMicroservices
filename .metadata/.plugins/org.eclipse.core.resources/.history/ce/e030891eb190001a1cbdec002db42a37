@@ -1,0 +1,13 @@
+package com.cg.hcgs;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class HealthCareGatewayServiceApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(HealthCareGatewayServiceApplication.class, args);
+	}
+
+}

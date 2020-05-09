@@ -1,0 +1,20 @@
+spring.application.name=appointment-service
+server.port=7999
+
+#Eureka config
+eureka.client.region=default
+eureka.client.registry-fetch-interval-seconds=5
+eureka.client.serviceUrl.defaultZone=http://localhost:7000/eureka/
+
+
+
+#db oracleConfiguration
+spring.datasource.url=jdbc:oracle:thin:@localhost:1521:xe
+spring.datasource.driver-class-name=oracle.jdbc.driver.OracleDriver
+spring.datasource.username=system
+spring.datasource.password=sachin
+spring.jpa.show-sql=true
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.Oracle10gDialect
+
+
