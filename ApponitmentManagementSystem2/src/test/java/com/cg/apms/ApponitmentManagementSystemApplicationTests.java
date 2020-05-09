@@ -1,10 +1,10 @@
-package com.example.demo;
+package com.cg.apms;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class AppointmentDiscoveryServiceApplicationTests {
+class ApponitmentManagementSystemApplicationTests {
 
 	@Test
 	void contextLoads() {
