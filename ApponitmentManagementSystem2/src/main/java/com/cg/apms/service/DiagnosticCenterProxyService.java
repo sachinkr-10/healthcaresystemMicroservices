@@ -7,11 +7,12 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import com.cg.apms.model.DiagnosticCenterModel;
+import org.springframework.web.bind.annotation.RequestHeader;
 
 @FeignClient(name="diagnostic-service")
 @RibbonClient(name="diagnostic-service")
-
 public interface DiagnosticCenterProxyService {
-        @GetMapping("/diagCenter")
-        public List<DiagnosticCenterModel> getAllCenters();
+        @GetMapping("/")
+        public List<DiagnosticCenterModel> getAllCenters(
+                @RequestHeader("Authorization") String authorizationToken);
 }
