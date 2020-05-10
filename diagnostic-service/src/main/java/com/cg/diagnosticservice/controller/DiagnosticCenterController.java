@@ -88,7 +88,7 @@ public class DiagnosticCenterController {
     }
 
 
-    @PostMapping()
+    @PostMapping
     ResponseEntity<?> addCenter(@Valid @RequestBody DiagnosticCenterDto diagnosticCenterDto) {
         try {
             DiagnosticCenter d = new DiagnosticCenter();

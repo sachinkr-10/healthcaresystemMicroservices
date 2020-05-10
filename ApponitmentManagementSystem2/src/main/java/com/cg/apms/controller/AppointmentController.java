@@ -19,6 +19,8 @@ import com.cg.apms.model.DiagnosticCenterModel;
 import com.cg.apms.service.AppointmentService;
 import com.cg.apms.service.DiagnosticCenterProxyService;
 
+import javax.servlet.http.HttpServletRequest;
+
 @RestController
 @CrossOrigin(origins = "*")
 @RequestMapping("/appointments")
@@ -29,7 +31,9 @@ public class AppointmentController {
 	DiagnosticCenterProxyService dcProxyServ;
 
 	@GetMapping
-	public ResponseEntity<List<AppointmentModel>> findAll(){
+	public ResponseEntity<List<AppointmentModel>> findAll(HttpServletRequest request){
+		String bearerTokenString=request.getHeader("Authorization");
+		dcProxyServ.getAllCenters(bearerTokenString.replace("Bearer ",""));
 		return new ResponseEntity<>(service.findAll(),HttpStatus.OK);
 	}
 	@PostMapping
