@@ -20,21 +20,14 @@ import com.cg.apms.service.AppointmentService;
 import com.cg.apms.service.DiagnosticCenterProxyService;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "*")
 @RequestMapping("/appointments")
 public class AppointmentController {
 	@Autowired
 	AppointmentService service;
 	@Autowired
 	DiagnosticCenterProxyService dcProxyServ;
-	
-	@GetMapping("/lists")
-	public ResponseEntity<List<DiagnosticCenterModel>> getList(){
-		List<DiagnosticCenterModel> model=dcProxyServ.getAllCenters();
-			return new ResponseEntity<>(model,HttpStatus.OK);
-		
-		
-	}
+
 	@GetMapping
 	public ResponseEntity<List<AppointmentModel>> findAll(){
 		return new ResponseEntity<>(service.findAll(),HttpStatus.OK);
