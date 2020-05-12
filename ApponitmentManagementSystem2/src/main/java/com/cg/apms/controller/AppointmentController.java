@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.cg.apms.model.AppointmentModel;
-import com.cg.apms.model.DiagnosticCenterModel;
 import com.cg.apms.service.AppointmentService;
 import com.cg.apms.service.DiagnosticCenterProxyService;
 

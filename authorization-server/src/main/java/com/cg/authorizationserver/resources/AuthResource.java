@@ -5,7 +5,6 @@ import com.cg.authorizationserver.dto.SignInResponse;
 import com.cg.authorizationserver.dto.SignInUserDTO;
 import com.cg.authorizationserver.dto.SignUpUserDTO;
 import com.cg.authorizationserver.models.AuthUser;
-import com.cg.authorizationserver.models.Role;
 import com.cg.authorizationserver.models.Roles;
 import com.cg.authorizationserver.repository.AuthUserRepository;
 import com.cg.authorizationserver.repository.RolesRepository;
@@ -15,7 +14,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.config.authentication.AuthenticationManagerFactoryBean;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.GrantedAuthority;
@@ -81,18 +79,24 @@ public class AuthResource {
     }
 
     @PostMapping("/signup")
-    public ResponseEntity<?> signUp(@RequestBody SignUpUserDTO signUpUserDTO) {
+    public ResponseEntity<?> signUp(@Valid @RequestBody SignUpUserDTO signUpUserDTO) {
         try {
+            if(applicationUserRepository.existsByUsername(signUpUserDTO.getUsername())){
+                return ResponseEntity.badRequest().body("Error: Email is already in use!");
+            }
             AuthUser authUser = new AuthUser();
             authUser.setPassword(bCryptPasswordEncoder.encode(signUpUserDTO.getPassword()));
             authUser.setUsername(signUpUserDTO.getUsername());
+            authUser.setFirstName(signUpUserDTO.getFirstName());
+            authUser.setLastName(signUpUserDTO.getLastName());
+            authUser.setContactNo(signUpUserDTO.getContactNo());
             List<Roles> rolesList = signUpUserDTO.getRolesList().stream().map(Roles::new).collect(Collectors.toList());
             rolesRepository.saveAll(rolesList);
             authUser.setRolesList(rolesList);
             applicationUserRepository.save(authUser);
-            return ResponseEntity.ok("all good");
+            return ResponseEntity.ok("USer Registartion Successful");
         } catch (Exception e) {
-            return ResponseEntity.badRequest().body("failed");
+            return ResponseEntity.badRequest().body("Registartion Failed");
         }
 
 

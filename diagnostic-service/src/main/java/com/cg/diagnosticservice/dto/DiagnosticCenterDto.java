@@ -1,6 +1,5 @@
 package com.cg.diagnosticservice.dto;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 import javax.validation.constraints.NotEmpty;

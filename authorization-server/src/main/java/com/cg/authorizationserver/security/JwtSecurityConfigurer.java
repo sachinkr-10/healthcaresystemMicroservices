@@ -1,6 +1,5 @@
 package com.cg.authorizationserver.security;
 
-import com.cg.authorizationserver.filters.JWTAuthenticationFilter;
 import com.cg.authorizationserver.services.AuthUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
