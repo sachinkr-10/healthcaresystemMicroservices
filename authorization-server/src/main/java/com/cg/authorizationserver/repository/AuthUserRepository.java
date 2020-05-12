@@ -7,5 +7,5 @@ import java.util.Optional;
 
 public interface AuthUserRepository extends CrudRepository<AuthUser,Long> {
     Optional<AuthUser> findByUsername(String username);
-
+	Boolean existsByUsername(String username);
 }

@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestHeader;
 @FeignClient(name="diagnostic-service")
 @RibbonClient(name="diagnostic-service")
 public interface DiagnosticCenterProxyService {
-        @GetMapping("/")
+        @GetMapping("/diagnosticCenter")
         public List<DiagnosticCenterModel> getAllCenters(
                 @RequestHeader("Authorization") String authorizationToken);
 }
