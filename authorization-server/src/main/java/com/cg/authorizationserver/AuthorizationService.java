@@ -10,9 +10,9 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 @SpringBootApplication
 @EnableWebSecurity
 @EnableEurekaClient
-public class AuthorizationServerApplication {
+public class AuthorizationService {
     public static void main(String[] args) {
-        SpringApplication.run(AuthorizationServerApplication.class, args);
+        SpringApplication.run(AuthorizationService.class, args);
     }
     @Bean
     public BCryptPasswordEncoder bCryptPasswordEncoder() {

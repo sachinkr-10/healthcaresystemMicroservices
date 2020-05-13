@@ -10,10 +10,10 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 @EnableDiscoveryClient
 @SpringBootApplication
 @EnableFeignClients("com.cg.apms.service")
-public class ApponitmentManagementSystemApplication {
+public class AppointmentManagementService {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ApponitmentManagementSystemApplication.class, args);
+		SpringApplication.run(AppointmentManagementService.class, args);
 	}
 //
 //	@Bean 

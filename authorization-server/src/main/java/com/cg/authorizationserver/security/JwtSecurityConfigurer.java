@@ -32,7 +32,7 @@ public class JwtSecurityConfigurer extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http
+        http.cors().and()
                 .csrf().disable()
                 // make sure we use stateless session; session won't be used to store user's state.
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
@@ -48,27 +48,16 @@ public class JwtSecurityConfigurer extends WebSecurityConfigurerAdapter {
 //                .addFilter(new JWTAuthenticationFilter(authenticationManager()))
                 .authorizeRequests()
                 // allow all POST requests
-                .antMatchers(HttpMethod.POST,"/auth/**").permitAll()
+                .antMatchers(HttpMethod.POST, "/auth/**").permitAll()
                 // any other requests must be authenticated
                 .anyRequest().authenticated();
     }
-
-
-//    @Override
-//    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-//        auth.userDetailsService(authUserService).passwordEncoder(bCryptPasswordEncoder);
-//    }
 
     @Bean
     @Override
     public AuthenticationManager authenticationManagerBean() throws Exception {
         return super.authenticationManagerBean();
     }
-    @Bean
-    CorsConfigurationSource corsConfigurationSource() {
-        final UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-        source.registerCorsConfiguration("/**", new CorsConfiguration().applyPermitDefaultValues());
-        return source;
-    }
+
 
 }

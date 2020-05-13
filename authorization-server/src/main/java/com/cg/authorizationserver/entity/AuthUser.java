@@ -1,4 +1,4 @@
-package com.cg.authorizationserver.models;
+package com.cg.authorizationserver.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;

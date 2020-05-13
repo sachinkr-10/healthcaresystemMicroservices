@@ -1,6 +1,6 @@
 package com.cg.authorizationserver.repository;
 
-import com.cg.authorizationserver.models.AuthUser;
+import com.cg.authorizationserver.entity.AuthUser;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.Optional;
