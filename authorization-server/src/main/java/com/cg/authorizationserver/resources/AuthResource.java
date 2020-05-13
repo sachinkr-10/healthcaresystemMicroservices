@@ -72,7 +72,7 @@ public class AuthResource {
                     .claim("roles", authenticatedUserAuthorityList)
                     .setIssuer("healthcare")
                     .signWith(SignatureAlgorithm.HS512, "secure").compact();
-            return ResponseEntity.status(200).body(new SignInResponse(token, true, authenticatedUserAuthorityList));
+            return ResponseEntity.ok(new SignInResponse(token, true, authenticatedUserAuthorityList));
 
         } catch (AuthenticationException e) {
             return ResponseEntity.status(401).body(new SignInFailResponse(false, e.getMessage()));
