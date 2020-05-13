@@ -1,16 +1,15 @@
-package com.cg.diagnosticservice.dto;
+package com.cg.authorizationserver.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class RestResponse<T> {
-    T data;
+@ToString
+public class SignUpResponseDTO {
+    String msg;
     boolean success;
-    String error;
-
-
 }
