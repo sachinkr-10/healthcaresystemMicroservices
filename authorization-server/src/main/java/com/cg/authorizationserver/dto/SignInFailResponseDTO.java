@@ -3,15 +3,11 @@ package com.cg.authorizationserver.dto;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.security.core.GrantedAuthority;
-
-import java.util.Collection;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class SignInResponse {
-    private String token;
+public class SignInFailResponseDTO {
     private boolean success;
-    private Collection<GrantedAuthority> authorityList;
+    private String msg;
 }

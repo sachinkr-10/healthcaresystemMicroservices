@@ -1,6 +1,6 @@
 package com.cg.authorizationserver.dto;
 
-import com.cg.authorizationserver.models.Role;
+import com.cg.authorizationserver.entity.Role;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

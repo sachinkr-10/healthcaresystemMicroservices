@@ -1,4 +1,4 @@
-package com.cg.authorizationserver.models;
+package com.cg.authorizationserver.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
