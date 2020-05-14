@@ -1,0 +1,13 @@
+com\cg\apms\exception\ApplicationManagementException.class
+com\cg\apms\model\DiagnosticCenterModel.class
+com\cg\apms\security\JWTAuthorizationFilter.class
+com\cg\apms\controller\AppointmentController.class
+com\cg\apms\model\TestDataModel.class
+com\cg\apms\security\JwtSecurityConfigurer.class
+com\cg\apms\service\DiagnosticCenterProxyService.class
+com\cg\apms\entity\AppointmentEntity.class
+com\cg\apms\service\AppointmentService.class
+com\cg\apms\service\AppointmentServiceImpl.class
+com\cg\apms\AppointmentManagementService.class
+com\cg\apms\dao\AppointmentRepository.class
+com\cg\apms\model\AppointmentModel.class

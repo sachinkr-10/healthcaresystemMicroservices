@@ -2,6 +2,7 @@ package com.cg.authorizationserver.resources;
 
 import com.cg.authorizationserver.dto.*;
 import com.cg.authorizationserver.entity.AuthUser;
+import com.cg.authorizationserver.entity.Role;
 import com.cg.authorizationserver.entity.Roles;
 import com.cg.authorizationserver.repository.AuthUserRepository;
 import com.cg.authorizationserver.repository.RolesRepository;
@@ -89,7 +90,8 @@ public class AuthResource {
             authUser.setFirstName(signUpUserDTO.getFirstName());
             authUser.setLastName(signUpUserDTO.getLastName());
             authUser.setContactNo(signUpUserDTO.getContactNo());
-            List<Roles> rolesList = signUpUserDTO.getRolesList().stream().map(Roles::new).collect(Collectors.toList());
+            List<Roles> rolesList = new ArrayList<>();
+            rolesList.add(new Roles(Role.USER));
             rolesRepository.saveAll(rolesList);
             authUser.setRolesList(rolesList);
             applicationUserRepository.save(authUser);
