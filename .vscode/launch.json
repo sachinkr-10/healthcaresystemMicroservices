@@ -1,0 +1,54 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-AppointmentManagementService<apppointment-management-sysytem>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.cg.apms.AppointmentManagementService",
+            "projectName": "apppointment-management-sysytem",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-DiagnosticServiceApplicatio<diagnostic-service>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.cg.diagnosticservice.DiagnosticServiceApplicatio",
+            "projectName": "diagnostic-service",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-GatewayService<healthcare-gateway-service>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.cg.hcgs.GatewayService",
+            "projectName": "healthcare-gateway-service",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-AuthorizationService<authorization-server>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.cg.authorizationserver.AuthorizationService",
+            "projectName": "authorization-server",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-DiscoveryService<appointment-discovery-service>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.cg.ads.DiscoveryService",
+            "projectName": "appointment-discovery-service",
+            "args": ""
+        }
+    ]
+}
