@@ -1,6 +1,6 @@
 package com.cg.authorizationserver.services;
 
-import com.cg.authorizationserver.models.AuthUser;
+import com.cg.authorizationserver.entity.AuthUser;
 import com.cg.authorizationserver.repository.AuthUserRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

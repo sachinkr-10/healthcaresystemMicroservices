@@ -1,11 +1,8 @@
 package com.cg.authorizationserver.resources;
 
-import com.cg.authorizationserver.dto.SignInFailResponse;
-import com.cg.authorizationserver.dto.SignInResponse;
-import com.cg.authorizationserver.dto.SignInUserDTO;
-import com.cg.authorizationserver.dto.SignUpUserDTO;
-import com.cg.authorizationserver.models.AuthUser;
-import com.cg.authorizationserver.models.Roles;
+import com.cg.authorizationserver.dto.*;
+import com.cg.authorizationserver.entity.AuthUser;
+import com.cg.authorizationserver.entity.Roles;
 import com.cg.authorizationserver.repository.AuthUserRepository;
 import com.cg.authorizationserver.repository.RolesRepository;
 import io.jsonwebtoken.Jwts;
@@ -28,6 +25,7 @@ import java.util.stream.Collectors;
 
 @CrossOrigin("*")
 @RestController
+@CrossOrigin(origins ="*")
 @RequestMapping("/auth")
 public class AuthResource {
 
@@ -69,10 +67,10 @@ public class AuthResource {
                     .claim("roles", authenticatedUserAuthorityList)
                     .setIssuer("healthcare")
                     .signWith(SignatureAlgorithm.HS512, "secure").compact();
-            return ResponseEntity.status(200).body(new SignInResponse(token, true, authenticatedUserAuthorityList));
+            return ResponseEntity.status(200).body(new SignInResponseDTO(token, true, authenticatedUserAuthorityList));
 
         } catch (AuthenticationException e) {
-            return ResponseEntity.status(401).body(new SignInFailResponse(false, e.getMessage()));
+            return ResponseEntity.status(401).body(new SignInFailResponseDTO(false, e.getMessage()));
         }
 
     }
@@ -93,9 +91,9 @@ public class AuthResource {
             rolesRepository.saveAll(rolesList);
             authUser.setRolesList(rolesList);
             applicationUserRepository.save(authUser);
-            return ResponseEntity.ok("USer Registartion Successful");
+            return ResponseEntity.ok(new SignUpResponseDTO("User Registration Successful",true));
         } catch (Exception e) {
-            return ResponseEntity.badRequest().body("Registartion Failed");
+            return ResponseEntity.badRequest().body(new SignUpFailResponseDTO(e.getMessage(),false));
         }
 
 
